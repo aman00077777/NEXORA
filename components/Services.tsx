@@ -57,7 +57,7 @@ export default function Services() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: "spring", stiffness: 80, damping: 15 },
+      transition: { type: "spring" as const, stiffness: 80, damping: 15 },
     },
   };
 
@@ -85,7 +85,7 @@ export default function Services() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
-          {services.map((service, index) => {
+          {services.map((service) => {
             const IconComponent = service.icon;
             return (
               <motion.div

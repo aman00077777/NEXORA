@@ -19,6 +19,7 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nexora.in"),
   title: "Nexora Digital Agency | Websites, AI Chatbots & Automation — Nagpur",
   description: "Nexora builds professional websites, AI chatbots, and workflow automation for Indian businesses. Based in Nagpur. Get a free mockup today.",
   openGraph: {
