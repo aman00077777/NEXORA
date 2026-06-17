@@ -20,11 +20,11 @@ const dmSerif = DM_Serif_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://nexora.in"),
-  title: "Nexora Digital Agency | Websites, AI Chatbots & Automation — Nagpur",
-  description: "Nexora builds professional websites, AI chatbots, and workflow automation for Indian businesses. Based in Nagpur. Get a free mockup today.",
+  title: "Nexora Digital Agency | Websites, AI Chatbots & Automation",
+  description: "Nexora builds professional websites, AI chatbots, and workflow automation for Indian businesses. Get a free mockup today.",
   openGraph: {
-    title: "Nexora Digital Agency | Websites, AI Chatbots & Automation — Nagpur",
-    description: "Nexora builds professional websites, AI chatbots, and workflow automation for Indian businesses. Based in Nagpur. Get a free mockup today.",
+    title: "Nexora Digital Agency | Websites, AI Chatbots & Automation",
+    description: "Nexora builds professional websites, AI chatbots, and workflow automation for Indian businesses. Get a free mockup today.",
     url: "https://nexora.in",
     siteName: "Nexora Digital Agency",
     images: [
@@ -40,8 +40,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Nexora Digital Agency | Websites, AI Chatbots & Automation — Nagpur",
-    description: "Nexora builds professional websites, AI chatbots, and workflow automation for Indian businesses. Based in Nagpur. Get a free mockup today.",
+    title: "Nexora Digital Agency | Websites, AI Chatbots & Automation",
+    description: "Nexora builds professional websites, AI chatbots, and workflow automation for Indian businesses. Get a free mockup today.",
     images: ["/nexora_logo.png"],
   },
 };

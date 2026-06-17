@@ -75,7 +75,7 @@ export default function Footer() {
               📧 <a href="mailto:Dropxloop@gmail.com" className="hover:text-white transition-colors duration-300">Dropxloop@gmail.com</a>
             </p>
             <p className="text-sm text-muted mt-2">
-              📍 Nagpur, Maharashtra, India
+              📍 Maharashtra, India
             </p>
           </div>
 
@@ -88,7 +88,7 @@ export default function Footer() {
           </p>
 
           <p className="text-xs text-muted flex items-center gap-1">
-            Made with <span className="text-red-500">&hearts;</span> in Nagpur, India
+            Made with <span className="text-red-500">&hearts;</span> in India
           </p>
 
           {/* Social Icons */}

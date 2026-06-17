@@ -52,7 +52,7 @@ export default function Hero() {
             variants={itemVariants}
             className="mb-6 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-light"
           >
-            Nagpur&apos;s Premium AI & Web Studio
+            India&apos;s Premium AI & Web Studio
           </motion.div>
 
           {/* Heading */}
@@ -73,8 +73,7 @@ export default function Hero() {
             variants={itemVariants}
             className="mt-8 max-w-2xl text-base text-muted md:text-lg lg:text-xl leading-relaxed"
           >
-            AI-powered websites, web apps &amp; automation for Indian businesses —
-            from Nagpur to the world.
+            AI-powered websites, web apps &amp; automation — from India to the world.
           </motion.p>
 
           {/* CTAs */}
