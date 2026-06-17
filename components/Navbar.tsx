@@ -54,24 +54,16 @@ export default function Navbar() {
               e.preventDefault();
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2.5 group"
           >
             <img
               src="/nexora_logo.png"
-              alt="Nexora Logo"
-              className="h-7 w-auto object-contain md:h-8"
-              onError={(e) => {
-                // Fallback text if logo doesn't load
-                e.currentTarget.style.display = "none";
-                const parent = e.currentTarget.parentElement;
-                if (parent && !parent.querySelector(".fallback-logo")) {
-                  const span = document.createElement("span");
-                  span.className = "fallback-logo text-xl font-bold font-serif tracking-wider text-white";
-                  span.innerText = "NEXORA";
-                  parent.appendChild(span);
-                }
-              }}
+              alt="Nexora Icon"
+              className="h-8 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
+            <span className="font-serif text-xl md:text-2xl font-normal tracking-[0.08em] uppercase bg-gradient-to-b from-white via-neutral-100 to-neutral-400 bg-clip-text text-transparent drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)] select-none">
+              Nexora
+            </span>
           </a>
 
           {/* Desktop Nav Links */}

@@ -24,22 +24,12 @@ export default function Footer() {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="flex items-center gap-2"
+              className="flex items-center"
             >
               <img
                 src="/nexora_logo.png"
-                alt="Nexora Logo"
-                className="h-7 w-auto object-contain"
-                onError={(e) => {
-                  e.currentTarget.style.display = "none";
-                  const parent = e.currentTarget.parentElement;
-                  if (parent && !parent.querySelector(".fallback-logo")) {
-                    const span = document.createElement("span");
-                    span.className = "fallback-logo text-lg font-bold font-serif text-white";
-                    span.innerText = "NEXORA";
-                    parent.appendChild(span);
-                  }
-                }}
+                alt="Nexora Icon"
+                className="h-8 w-auto object-contain"
               />
             </a>
             <p className="text-sm text-muted max-w-sm mt-2 leading-relaxed">
