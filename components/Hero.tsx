@@ -176,7 +176,7 @@ export default function Hero() {
           >
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/5 text-center">
               <div className="flex flex-col items-center justify-center px-4 py-2">
-                <span className="text-3xl font-serif font-semibold text-white">10+</span>
+                <span className="text-3xl font-serif font-semibold text-white">25+</span>
                 <span className="mt-1 text-xs uppercase tracking-widest text-muted">Projects Delivered</span>
               </div>
               <div className="flex flex-col items-center justify-center px-4 py-2">

@@ -123,13 +123,6 @@ export default function Pricing() {
           {plans.map((plan) => {
             const cardContent = (
               <>
-                {/* Highlight Badge */}
-                {plan.popular && (
-                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-wider text-white z-20 shadow-glow">
-                    Most Popular
-                  </span>
-                )}
-
                 {/* Package Meta */}
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-white">{plan.name}</h3>
@@ -176,14 +169,22 @@ export default function Pricing() {
                 <motion.div
                   key={plan.name}
                   variants={cardVariants}
-                  className="relative p-[1.5px] overflow-hidden rounded-[24px] flex flex-col hover:shadow-[0_0_35px_rgba(124,58,237,0.35)] transition-shadow duration-500"
+                  className="relative flex flex-col pt-4"
                 >
-                  {/* Rotating Conic Gradient Border */}
-                  <div className="absolute top-1/2 left-1/2 h-[300%] w-[300%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_30%,#7c3aed_50%,#a855f7_70%,transparent_100%)] animate-spin-gradient z-0" />
-                  
-                  {/* Inner Content Card */}
-                  <div className="relative z-10 flex flex-1 flex-col rounded-[22px] bg-[#111111]/95 p-8 w-full h-full">
-                    {cardContent}
+                  {/* Highlight Badge - Placed outside overflow-hidden border container */}
+                  <span className="absolute top-0 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-wider text-white z-20 shadow-glow">
+                    Most Popular
+                  </span>
+
+                  {/* Conic Gradient Border Container */}
+                  <div className="relative p-[1.5px] overflow-hidden rounded-[24px] flex flex-col flex-1 hover:shadow-[0_0_35px_rgba(124,58,237,0.35)] transition-shadow duration-500">
+                    {/* Rotating Conic Gradient Border */}
+                    <div className="absolute top-1/2 left-1/2 h-[300%] w-[300%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_30%,#7c3aed_50%,#a855f7_70%,transparent_100%)] animate-spin-gradient z-0" />
+                    
+                    {/* Inner Content Card */}
+                    <div className="relative z-10 flex flex-1 flex-col rounded-[22px] bg-[#111111]/95 p-8 w-full h-full">
+                      {cardContent}
+                    </div>
                   </div>
                 </motion.div>
               );
@@ -193,9 +194,11 @@ export default function Pricing() {
               <motion.div
                 key={plan.name}
                 variants={cardVariants}
-                className="relative flex flex-col rounded-3xl bg-[#111111]/90 p-8 border border-white/5 hover:border-primary/40 transition-all duration-500"
+                className="relative flex flex-col pt-4"
               >
-                {cardContent}
+                <div className="relative flex flex-1 flex-col rounded-3xl bg-[#111111]/90 p-8 border border-white/5 hover:border-primary/40 transition-all duration-500">
+                  {cardContent}
+                </div>
               </motion.div>
             );
           })}
