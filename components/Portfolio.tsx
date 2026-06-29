@@ -107,8 +107,14 @@ export default function Portfolio() {
             <motion.div
               key={project.title}
               variants={cardVariants}
-              className="group relative flex flex-col overflow-hidden rounded-2xl bg-[#111111]/90 border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-glow"
-              whileHover={{ y: -8 }}
+              className="group relative flex flex-col overflow-hidden rounded-2xl bg-[#111111]/90 border border-white/5 transition-colors duration-500"
+              whileHover={{ 
+                scale: 1.02, 
+                y: -5,
+                borderColor: "rgba(168, 85, 247, 0.3)",
+                boxShadow: "0 0 25px rgba(124, 58, 237, 0.25)"
+              }}
+              transition={{ type: "spring", stiffness: 100, damping: 20 }}
             >
               {/* Graphic Placeholder Image (No stock photos) */}
               <div className={`relative h-52 w-full bg-gradient-to-br ${project.bgGradient} overflow-hidden border-b border-white/5 flex items-center justify-center`}>

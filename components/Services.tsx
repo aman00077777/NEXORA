@@ -91,8 +91,14 @@ export default function Services() {
               <motion.div
                 key={service.name}
                 variants={cardVariants}
-                className="group relative rounded-2xl bg-[#111111]/80 p-8 border border-white/5 hover:border-primary/30 transition-all duration-500 hover:shadow-glow"
-                whileHover={{ y: -5 }}
+                className="group relative rounded-2xl bg-[#111111]/80 p-8 border border-white/5 transition-colors duration-500"
+                whileHover={{ 
+                  scale: 1.02, 
+                  y: -5,
+                  borderColor: "rgba(168, 85, 247, 0.3)",
+                  boxShadow: "0 0 25px rgba(124, 58, 237, 0.25)"
+                }}
+                transition={{ type: "spring", stiffness: 100, damping: 20 }}
               >
                 {/* Neon blur indicator top-left */}
                 <div className="absolute top-0 left-0 h-10 w-10 rounded-tl-2xl border-t border-l border-primary/0 group-hover:border-primary/50 group-hover:h-16 group-hover:w-16 transition-all duration-500" />

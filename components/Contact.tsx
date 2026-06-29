@@ -94,7 +94,7 @@ export default function Contact() {
             {/* Social handles */}
             <div className="mt-10 flex items-center gap-4">
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/buildwithnexora?igsh=MXR4Y21jd2I3eG4zdQ==&utm_source=ig_contact_invite"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white/5 border border-white/10 text-muted hover:text-white hover:border-white/20 transition-all duration-300"

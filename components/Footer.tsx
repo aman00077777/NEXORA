@@ -94,7 +94,7 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex items-center gap-4">
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/buildwithnexora?igsh=MXR4Y21jd2I3eG4zdQ==&utm_source=ig_contact_invite"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted hover:text-white transition-colors duration-300"

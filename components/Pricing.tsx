@@ -69,6 +69,25 @@ export default function Pricing() {
     },
   };
 
+  const listContainerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.08,
+        delayChildren: 0.15,
+      },
+    },
+  };
+
+  const listItemVariants = {
+    hidden: { opacity: 0, x: -12 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { type: "spring" as const, stiffness: 100, damping: 15 },
+    },
+  };
+
   const handleScrollTo = (e: React.MouseEvent<HTMLButtonElement>, href: string) => {
     e.preventDefault();
     const target = document.querySelector(href);
@@ -101,56 +120,85 @@ export default function Pricing() {
           viewport={{ once: true, margin: "-100px" }}
           className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 items-stretch"
         >
-          {plans.map((plan) => (
-            <motion.div
-              key={plan.name}
-              variants={cardVariants}
-              className={`relative flex flex-col rounded-3xl bg-[#111111]/90 p-8 border ${
-                plan.popular
-                  ? "border-primary shadow-glow ring-1 ring-primary"
-                  : "border-white/5"
-              } hover:border-primary/40 transition-all duration-500`}
-            >
-              {/* Highlight Badge */}
-              {plan.popular && (
-                <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-wider text-white">
-                  Most Popular
-                </span>
-              )}
+          {plans.map((plan) => {
+            const cardContent = (
+              <>
+                {/* Highlight Badge */}
+                {plan.popular && (
+                  <span className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-primary px-4 py-1 text-xs font-bold uppercase tracking-wider text-white z-20 shadow-glow">
+                    Most Popular
+                  </span>
+                )}
 
-              {/* Package Meta */}
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-white">{plan.name}</h3>
-                <p className="mt-2 text-sm text-muted leading-relaxed min-h-[40px]">{plan.desc}</p>
-                <div className="mt-5 flex items-baseline">
-                  <span className="text-4xl font-bold tracking-tight text-white">{plan.price}</span>
-                  <span className="ml-1 text-sm font-medium text-muted">/one-time</span>
+                {/* Package Meta */}
+                <div className="mb-6">
+                  <h3 className="text-xl font-bold text-white">{plan.name}</h3>
+                  <p className="mt-2 text-sm text-muted leading-relaxed min-h-[40px]">{plan.desc}</p>
+                  <div className="mt-5 flex items-baseline">
+                    <span className="text-4xl font-bold tracking-tight text-white">{plan.price}</span>
+                    <span className="ml-1 text-sm font-medium text-muted">/one-time</span>
+                  </div>
                 </div>
-              </div>
 
-              {/* Feature List */}
-              <ul className="space-y-4 mb-8 flex-1 border-t border-white/5 pt-6">
-                {plan.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-sm text-muted">
-                    <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
-                    <span className="group-hover:text-white transition-colors duration-300">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+                {/* Feature List with staggered entrance */}
+                <motion.ul 
+                  variants={listContainerVariants}
+                  className="space-y-4 mb-8 flex-1 border-t border-white/5 pt-6"
+                >
+                  {plan.features.map((feature) => (
+                    <motion.li 
+                      key={feature} 
+                      variants={listItemVariants}
+                      className="flex items-start gap-3 text-sm text-muted"
+                    >
+                      <Check className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                      <span className="hover:text-white transition-colors duration-300">{feature}</span>
+                    </motion.li>
+                  ))}
+                </motion.ul>
 
-              {/* Action Button */}
-              <button
-                onClick={(e) => handleScrollTo(e, "#contact")}
-                className={`w-full rounded-full py-4 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
-                  plan.popular
-                    ? "bg-primary text-white shadow-glow hover:bg-primary-light hover:shadow-glow-lg"
-                    : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
-                }`}
+                {/* Action Button */}
+                <button
+                  onClick={(e) => handleScrollTo(e, "#contact")}
+                  className={`w-full rounded-full py-4 text-xs font-semibold uppercase tracking-wider transition-all duration-300 ${
+                    plan.popular
+                      ? "bg-primary text-white shadow-glow hover:bg-primary-light hover:shadow-glow-lg"
+                      : "bg-white/5 border border-white/10 text-white hover:bg-white/10"
+                  }`}
+                >
+                  {plan.ctaText}
+                </button>
+              </>
+            );
+
+            if (plan.popular) {
+              return (
+                <motion.div
+                  key={plan.name}
+                  variants={cardVariants}
+                  className="relative p-[1.5px] overflow-hidden rounded-[24px] flex flex-col hover:shadow-[0_0_35px_rgba(124,58,237,0.35)] transition-shadow duration-500"
+                >
+                  {/* Rotating Conic Gradient Border */}
+                  <div className="absolute top-1/2 left-1/2 h-[300%] w-[300%] -translate-x-1/2 -translate-y-1/2 bg-[conic-gradient(from_0deg,transparent_30%,#7c3aed_50%,#a855f7_70%,transparent_100%)] animate-spin-gradient z-0" />
+                  
+                  {/* Inner Content Card */}
+                  <div className="relative z-10 flex flex-1 flex-col rounded-[22px] bg-[#111111]/95 p-8 w-full h-full">
+                    {cardContent}
+                  </div>
+                </motion.div>
+              );
+            }
+
+            return (
+              <motion.div
+                key={plan.name}
+                variants={cardVariants}
+                className="relative flex flex-col rounded-3xl bg-[#111111]/90 p-8 border border-white/5 hover:border-primary/40 transition-all duration-500"
               >
-                {plan.ctaText}
-              </button>
-            </motion.div>
-          ))}
+                {cardContent}
+              </motion.div>
+            );
+          })}
         </motion.div>
 
         {/* Retainer and Custom Box */}

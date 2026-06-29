@@ -8,18 +8,45 @@ export default function Hero() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
+        staggerChildren: 0.06,
+        delayChildren: 0.1,
       },
     },
   };
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
+  const badgeVariants = {
+    hidden: { opacity: 0, y: -20 },
     visible: {
       opacity: 1,
       y: 0,
       transition: { type: "spring" as const, stiffness: 100, damping: 20 },
+    },
+  };
+
+  const wordVariants = {
+    hidden: { y: "115%", opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { type: "spring" as const, stiffness: 100, damping: 20 },
+    },
+  };
+
+  const softRevealVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut", delay: 0.7 },
+    },
+  };
+
+  const statsRevealVariants = {
+    hidden: { opacity: 0, y: 15 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut", delay: 0.95 },
     },
   };
 
@@ -36,9 +63,34 @@ export default function Hero() {
       {/* Decorative Grid Pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
-      {/* Floating Animated Gradient Orbs */}
-      <div className="absolute top-1/4 left-1/4 -z-10 h-72 w-72 rounded-full bg-primary/20 blur-[100px] animate-orb-float" />
-      <div className="absolute bottom-1/4 right-1/4 -z-10 h-96 w-96 rounded-full bg-accent/10 blur-[120px] animate-orb-float [animation-delay:4s]" />
+      {/* Floating Animated Gradient Orbs using physics-based Framer Motion loops */}
+      <motion.div 
+        className="absolute top-1/4 left-1/4 -z-10 h-72 w-72 rounded-full bg-primary/20 blur-[100px]"
+        animate={{
+          x: [0, 25, -15, 0],
+          y: [0, -35, 20, 0],
+          scale: [1, 1.1, 0.95, 1],
+        }}
+        transition={{
+          duration: 12,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }}
+      />
+      <motion.div 
+        className="absolute bottom-1/4 right-1/4 -z-10 h-96 w-96 rounded-full bg-accent/10 blur-[120px]"
+        animate={{
+          x: [0, -30, 20, 0],
+          y: [0, 30, -25, 0],
+          scale: [1, 0.9, 1.1, 1],
+        }}
+        transition={{
+          duration: 16,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1.5,
+        }}
+      />
 
       <div className="relative mx-auto max-w-5xl px-6 py-20 text-center md:px-8">
         <motion.div
@@ -49,36 +101,56 @@ export default function Hero() {
         >
           {/* Badge */}
           <motion.div
-            variants={itemVariants}
+            variants={badgeVariants}
             className="mb-6 rounded-full border border-primary/30 bg-primary/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-primary-light"
           >
             India&apos;s Premium AI & Web Studio
           </motion.div>
 
-          {/* Heading */}
-          <motion.h1
-            variants={itemVariants}
-            className="font-serif text-5xl font-normal leading-[1.1] tracking-tight text-white md:text-7xl lg:text-8xl"
-          >
-            We Build Digital
-            <br />
-            <span className="bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent font-serif font-normal italic">
-              Experiences
-            </span>{" "}
-            That Scale.
-          </motion.h1>
+          {/* Heading with staggered text reveal */}
+          <h1 className="font-serif text-5xl font-normal leading-[1.2] tracking-tight text-white md:text-7xl lg:text-8xl flex flex-col items-center justify-center">
+            <span className="flex flex-wrap justify-center overflow-hidden py-1">
+              {["We", "Build", "Digital"].map((word, i) => (
+                <motion.span
+                  key={`${word}-${i}`}
+                  variants={wordVariants}
+                  className="inline-block mx-[0.15em] font-serif"
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </span>
+            <span className="flex flex-wrap justify-center overflow-hidden py-1">
+              {["Experiences", "That", "Scale."].map((word, i) => {
+                const isExperiences = word === "Experiences";
+                return (
+                  <motion.span
+                    key={`${word}-${i}`}
+                    variants={wordVariants}
+                    className={`inline-block mx-[0.15em] ${
+                      isExperiences
+                        ? "bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent font-serif font-normal italic"
+                        : "font-serif"
+                    }`}
+                  >
+                    {word}
+                  </motion.span>
+                );
+              })}
+            </span>
+          </h1>
 
-          {/* Subheading */}
+          {/* Subheading (Fades in softly after heading) */}
           <motion.p
-            variants={itemVariants}
+            variants={softRevealVariants}
             className="mt-8 max-w-2xl text-base text-muted md:text-lg lg:text-xl leading-relaxed"
           >
             AI-powered websites, web apps &amp; automation — from India to the world.
           </motion.p>
 
-          {/* CTAs */}
+          {/* CTAs (Fades in softly after heading) */}
           <motion.div
-            variants={itemVariants}
+            variants={softRevealVariants}
             className="mt-10 flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto"
           >
             <button
@@ -97,9 +169,9 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          {/* Trust Stats divider */}
+          {/* Trust Stats divider (Fades in softly last) */}
           <motion.div
-            variants={itemVariants}
+            variants={statsRevealVariants}
             className="w-full max-w-3xl mt-20 border-t border-white/5 pt-8"
           >
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-white/5 text-center">

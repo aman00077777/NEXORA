@@ -4,6 +4,7 @@ import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollToTop from "@/components/ScrollToTop";
+import SmoothScroll from "@/components/SmoothScroll";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -62,8 +63,11 @@ export default function RootLayout({
         {/* Custom interactive cursor for desktop */}
         <CustomCursor />
         
-        {/* Main Content */}
-        {children}
+        {/* Smooth scrolling wrapper */}
+        <SmoothScroll>
+          {/* Main Content */}
+          {children}
+        </SmoothScroll>
         
         {/* Floating Widgets */}
         <WhatsAppButton />
@@ -72,3 +76,4 @@ export default function RootLayout({
     </html>
   );
 }
+
