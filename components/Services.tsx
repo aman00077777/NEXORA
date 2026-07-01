@@ -7,37 +7,31 @@ const services = [
   {
     name: "Business Website",
     icon: Globe,
-    price: "Rs.8,000 – Rs.35,000",
     desc: "Static or dynamic websites for shops, clinics, restaurants, coaches, and real estate agents. Mobile responsive, SEO-ready, and Google Maps integrated.",
   },
   {
     name: "E-Commerce Store",
     icon: ShoppingBag,
-    price: "Rs.20,000 – Rs.60,000",
     desc: "Online stores for product-based businesses. Includes payment gateways (Razorpay/UPI), inventory, order management, and WhatsApp alerts.",
   },
   {
     name: "Web App / SaaS MVP",
     icon: Layout,
-    price: "Rs.40,000 – Rs.1,50,000+",
     desc: "Custom web dashboards, booking systems, admin panels, custom CRM systems, and database-backed internal tools for your business operations.",
   },
   {
     name: "AI Chatbot",
     icon: MessageSquare,
-    price: "Rs.10,000 – Rs.30,000",
     desc: "WhatsApp & website chatbots for lead capture, automated customer support, and FAQ automation. Powered by Google Gemini AI.",
   },
   {
     name: "AI Agents & Automation",
     icon: Cpu,
-    price: "Rs.15,000 – Rs.75,000",
     desc: "Workflows on autopilot: automated lead routing, invoice generation, follow-up emails, and social media posting. Built using n8n + AI.",
   },
   {
     name: "Brand Identity & UI/UX",
     icon: Palette,
-    price: "Rs.8,000 – Rs.25,000",
     desc: "Design guidelines, logo assets, curated color palettes, custom typography, and high-fidelity Figma UI mockups for your web products.",
   },
 ];
@@ -113,10 +107,6 @@ export default function Services() {
                   {service.name}
                 </h3>
 
-                {/* Pricing range badge */}
-                <div className="mt-3 inline-block rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-accent">
-                  {service.price}
-                </div>
 
                 {/* Description */}
                 <p className="mt-4 text-sm leading-relaxed text-muted group-hover:text-white/80 transition-colors duration-300">

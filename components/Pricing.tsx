@@ -6,7 +6,6 @@ import { Check } from "lucide-react";
 const plans = [
   {
     name: "Basic Website",
-    price: "Rs.8,000",
     desc: "Perfect for local businesses, shops, and startups needing an online presence.",
     features: [
       "1 Page High-Converting Layout",
@@ -20,7 +19,6 @@ const plans = [
   },
   {
     name: "Standard Website",
-    price: "Rs.18,000",
     desc: "Ideal for growing service providers, clinics, restaurants, and coaches.",
     features: [
       "Up to 5 Custom Pages",
@@ -35,7 +33,6 @@ const plans = [
   },
   {
     name: "Premium Website",
-    price: "Rs.35,000",
     desc: "For brands wanting to dominate search results and integrate custom features.",
     features: [
       "Unlimited Custom Pages",
@@ -105,10 +102,10 @@ export default function Pricing() {
         {/* Header */}
         <div className="text-center mb-20 max-w-3xl mx-auto">
           <h2 className="font-serif text-4xl font-normal leading-tight text-white md:text-5xl">
-            Simple, Transparent Pricing
+            Simple, Transparent Packages
           </h2>
           <p className="mt-4 text-base text-muted md:text-lg">
-            High-value design and engineering at competitive pricing, structured specifically for the Indian market.
+            High-value design and engineering structured specifically for your business growth.
           </p>
         </div>
 
@@ -127,10 +124,6 @@ export default function Pricing() {
                 <div className="mb-6">
                   <h3 className="text-xl font-bold text-white">{plan.name}</h3>
                   <p className="mt-2 text-sm text-muted leading-relaxed min-h-[40px]">{plan.desc}</p>
-                  <div className="mt-5 flex items-baseline">
-                    <span className="text-4xl font-bold tracking-tight text-white">{plan.price}</span>
-                    <span className="ml-1 text-sm font-medium text-muted">/one-time</span>
-                  </div>
                 </div>
 
                 {/* Feature List with staggered entrance */}
@@ -207,7 +200,7 @@ export default function Pricing() {
         {/* Retainer and Custom Box */}
         <div className="mt-16 flex flex-col items-center text-center gap-6">
           <p className="text-sm text-muted italic">
-            * Custom pricing packages available for custom Web Applications, AI Agents, n8n automation flow integrations &amp; complex SaaS MVP solutions.
+            * Custom packages available for custom Web Applications, AI Agents, n8n automation flow integrations &amp; complex SaaS MVP solutions.
           </p>
 
           <motion.div
@@ -224,13 +217,11 @@ export default function Pricing() {
                 </p>
               </div>
               <div className="text-center sm:text-right shrink-0">
-                <span className="text-xs uppercase tracking-wider text-primary-light font-semibold">Starts From</span>
-                <div className="text-2xl font-bold text-white mt-1">Rs.5,000/month</div>
                 <button
                   onClick={(e) => handleScrollTo(e, "#contact")}
-                  className="mt-3 text-xs font-bold uppercase tracking-wider text-primary hover:text-primary-light transition-colors duration-300"
+                  className="rounded-full bg-primary px-6 py-2.5 text-xs font-semibold uppercase tracking-wider text-white shadow-glow hover:bg-primary-light hover:shadow-glow-lg transition-all duration-300"
                 >
-                  Learn More &rarr;
+                  Inquire Now &rarr;
                 </button>
               </div>
             </div>
