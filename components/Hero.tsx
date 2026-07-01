@@ -64,7 +64,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)]" />
 
       {/* Floating Animated Gradient Orbs using physics-based Framer Motion loops */}
-      <motion.div 
+      <motion.div
         className="absolute top-1/4 left-1/4 -z-10 h-72 w-72 rounded-full bg-primary/20 blur-[100px]"
         animate={{
           x: [0, 25, -15, 0],
@@ -77,7 +77,7 @@ export default function Hero() {
           ease: "easeInOut",
         }}
       />
-      <motion.div 
+      <motion.div
         className="absolute bottom-1/4 right-1/4 -z-10 h-96 w-96 rounded-full bg-accent/10 blur-[120px]"
         animate={{
           x: [0, -30, 20, 0],
@@ -127,11 +127,10 @@ export default function Hero() {
                   <motion.span
                     key={`${word}-${i}`}
                     variants={wordVariants}
-                    className={`inline-block mx-[0.15em] ${
-                      isExperiences
+                    className={`inline-block mx-[0.15em] ${isExperiences
                         ? "bg-gradient-to-r from-primary-light to-accent bg-clip-text text-transparent font-serif font-normal italic"
                         : "font-serif"
-                    }`}
+                      }`}
                   >
                     {word}
                   </motion.span>
