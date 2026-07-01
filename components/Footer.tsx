@@ -84,7 +84,7 @@ export default function Footer() {
         {/* Divider & Copyright */}
         <div className="mt-12 md:mt-16 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-6">
           <p className="text-xs text-muted">
-            &copy; 2025 Nexora Digital Agency | <a href="https://nexora.in" className="hover:text-white transition-colors duration-300">nexora.in</a>
+            &copy; 2026 Nexora Digital Agency | <a href="https://nexora.in" className="hover:text-white transition-colors duration-300">nexora.in</a>
           </p>
 
           <p className="text-xs text-muted flex items-center gap-1">

@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Nexora Digital Agency",
     images: [
       {
-        url: "/nexora_logo.png",
+        url: "https://nexora-sepia-sigma.vercel.app/nexora_logo.png",
         width: 800,
         height: 600,
         alt: "Nexora Digital Agency Logo",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Nexora Digital Agency | Websites, AI Chatbots & Automation",
     description: "Nexora builds professional websites, AI chatbots, and workflow automation for Indian businesses. Get a free mockup today.",
-    images: ["/nexora_logo.png"],
+    images: ["https://nexora-sepia-sigma.vercel.app/nexora_logo.png"],
   },
 };
 
