@@ -11,24 +11,24 @@ interface FAQItem {
 
 const faqs: FAQItem[] = [
   {
-    question: "Website banane me kitna time lagta hai?",
+    question: "How long does it take to build a website?",
     answer: "Normally, standard business websites are delivered within 10-15 days. Custom web applications and complex SaaS MVP solutions take around 3 to 6 weeks depending on the project scope and features.",
   },
   {
     question: "Do we need to pay any advance amount?",
-    answer: "Haan, we follow a standard 50% advance setup to initiate the design phase. Once the initial homepage mockup is approved, we proceed with development, and the remaining 50% is paid after final delivery and domain/hosting deployment.",
+    answer: "Yes, we follow a standard 50% advance setup to initiate the design phase. Once the initial homepage mockup is approved, we proceed with development, and the remaining 50% is paid after final delivery and domain/hosting deployment.",
   },
   {
-    question: "Kya aap existing websites ko redesign aur upgrade kar sakte hain?",
-    answer: "Absolutely! Hum aapke legacy or slow-loading websites ko redesign karke super-fast Next.js architecture me transition kar sakte hain, including modern UI layout modifications and AI chatbot integrations.",
+    question: "Can you redesign or upgrade my existing website?",
+    answer: "Absolutely! We can redesign legacy or slow-loading websites and migrate them to a super-fast Next.js architecture, including modern UI layout modifications and AI chatbot integrations.",
   },
   {
-    question: "Deliver hone ke baad support milega kya?",
+    question: "Do you provide support after the website is delivered?",
     answer: "Yes, every package comes with 1 month of free post-launch support and performance tuning. After that, you can opt for our flexible monthly retainers to keep content updated, SEO optimized, and system backups managed.",
   },
   {
-    question: "Kya payment installments me ho sakti hai?",
-    answer: "Bilkul. For larger projects like Premium Websites or custom SaaS developments, we offer a milestone-based payment structure split into 3 or 4 easy installments.",
+    question: "Can the payment be split into installments?",
+    answer: "Yes. For larger projects like Premium Websites or custom SaaS developments, we offer a milestone-based payment structure split into 3 or 4 easy installments.",
   },
   {
     question: "What technology stack do you use?",

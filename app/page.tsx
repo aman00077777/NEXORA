@@ -18,12 +18,12 @@ export default function Home() {
         <Hero />
         <Services />
         <Portfolio />
-        <Testimonials />
         <Process />
         <Pricing />
-        <FAQ />
         <WhyNexora />
+        <Testimonials />
         <Contact />
+        <FAQ />
       </main>
       <Footer />
     </>
