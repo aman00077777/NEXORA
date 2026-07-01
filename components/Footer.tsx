@@ -56,6 +56,20 @@ export default function Footer() {
                 Work
               </a>
               <a
+                href="#testimonials"
+                onClick={(e) => handleScrollTo(e, "#testimonials")}
+                className="text-sm text-muted hover:text-white transition-colors duration-300 w-fit"
+              >
+                Testimonials
+              </a>
+              <a
+                href="#faq"
+                onClick={(e) => handleScrollTo(e, "#faq")}
+                className="text-sm text-muted hover:text-white transition-colors duration-300 w-fit"
+              >
+                FAQ
+              </a>
+              <a
                 href="#contact"
                 onClick={(e) => handleScrollTo(e, "#contact")}
                 className="text-sm text-muted hover:text-white transition-colors duration-300 w-fit"
